@@ -1,0 +1,22 @@
+class Solution(object):
+    def tribonacci(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        self.a=[]
+        self.a=[int('0')*39]
+        def check(n):
+            if self.a[n]!=0:
+                return self.a[n]
+            if n==0:
+                return 0
+            if n==0 or n==1:
+                return 1
+            else:
+                ans=check(n-1)+check(n-2)+check(n-3)
+                self.a[n]=ans
+            return ans
+        return check(n)
+           
+                
